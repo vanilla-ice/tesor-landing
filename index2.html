@@ -3,14 +3,28 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link rel="stylesheet" href="stylesheets/app.css">
   <script src="javascripts/vendor.js"></script>
-  <script src="javascripts/app.js"></script><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSk6fi3yogHuUL5NB9MP8LLDp8tXdCy9w&language=ru&callback=initMap">
+  <script src="javascripts/app.js"></script>
+  <script src="mask.js"></script><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSk6fi3yogHuUL5NB9MP8LLDp8tXdCy9w&language=ru&callback=initMap">
   </script>
+  <script src="https://raw.githubusercontent.com/digitalBush/jquery.maskedinput/1.4.1/dist/jquery.maskedinput.min.js"></script>
   <script>
     require('initialize');
     
   </script>
 </head>
 <body>
+  <div class="popup">
+    <div class="popup__close"><img src="images/close.png"></div>
+    <div class="inner">
+      <div class="catalog-form"> 
+        <div class="catalog-form__title">Заполните форму</div>
+        <input id="popupSecond_name" type="text" value="Ваше имя" class="catalog-form__input">
+        <input id="popupSecond_phone" type="text" placeholder="Ваш телефон" class="catalog-form__input phone">
+        <div class="catalog-form__button js-popupFirst">Заказать звонок</div>
+        <div class="catalog-form__privacy">Ваши контактные данные в безопасности<br>и не будут переданы третьим лицам</div>
+      </div>
+    </div>
+  </div>
   <div class="head">
     <div class="container">
       <header class="head__header header"> 
@@ -43,7 +57,7 @@
     <div class="container"> 
       <div class="demonstration__title">Приходите на демонстрацию в дизайн-салон кухню на Смоленской 10</div>
       <div class="demonstration__button">Записаться на демонстрацию</div>
-      <div class="demonstration__link"><a href="form.html">Посмотреть 3D-тур по салону</a></div>
+      <div class="demonstration__link"><a href="http://superzoom.ru/pano/_tesori/">Посмотреть 3D-тур по салону</a></div>
     </div>
   </div>
   <div id="map"></div>

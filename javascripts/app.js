@@ -162,10 +162,10 @@ $(document).ready(function() {
       text: "Имя: " + catalog_name + ", телефон: " + catalog_phone
     }, {
       success: function(success) {
-        return alert('Заявка принята!');
+        return swal('Спасибо за заявку');
       },
       error: function(error) {
-        return alert('Ошибка');
+        return swal('Ошибка');
       }
     });
   });
@@ -180,15 +180,69 @@ $(document).ready(function() {
       text: "Имя: " + firstPage_name + ", телефон: " + firstPage_phone
     }, {
       success: function(success) {
-        return alert('Заявка принята!');
+        return swal('Спасибо за заявку!');
       },
       error: function(error) {
-        return alert('Ошибка');
+        return swal('Ошибка');
       }
     });
   });
-  return window.initMap = function() {
-    var cairo, map, styles;
+  $('.popupFirst').click(function() {
+    var catalog_name, catalog_phone;
+    catalog_name = $('#popupFirst_name').val();
+    catalog_phone = $('#popupFirst_phone').val();
+    return Parse.Cloud.run('sendmail', {
+      target: 'valeraerohin97@mail.ru',
+      originator: 'tesor@landing.ru',
+      subject: 'Новая заявка!',
+      text: "Имя: " + catalog_name + ", телефон: " + catalog_phone
+    }, {
+      success: function(success) {
+        return swal('Спасибо за заявку');
+      },
+      error: function(error) {
+        return swal('Ошибка');
+      }
+    });
+  });
+  $('.popupSecond').click(function() {
+    var catalog_name, catalog_phone;
+    catalog_name = $('#popupSecond_name').val();
+    catalog_phone = $('#popupSecond_phone').val();
+    return Parse.Cloud.run('sendmail', {
+      target: 'valeraerohin97@mail.ru',
+      originator: 'tesor@landing.ru',
+      subject: 'Новая заявка!',
+      text: "Имя: " + firstPage_name + ", телефон: " + firstPage_phone
+    }, {
+      success: function(success) {
+        return swal('Спасибо за заявку!');
+      },
+      error: function(error) {
+        return swal('Ошибка');
+      }
+    });
+  });
+  $('.js-thirdPage').click(function() {
+    var catalog_name, catalog_phone;
+    catalog_name = $('#thirdPage_name').val();
+    catalog_phone = $('#thirdPage_phone').val();
+    return Parse.Cloud.run('sendmail', {
+      target: 'valeraerohin97@mail.ru',
+      originator: 'tesor@landing.ru',
+      subject: 'Новая заявка!',
+      text: "Имя: " + firstPage_name + ", телефон: " + firstPage_phone
+    }, {
+      success: function(success) {
+        return swal('Спасибо за заявку!');
+      },
+      error: function(error) {
+        return swal('Ошибка');
+      }
+    });
+  });
+  window.initMap = function() {
+    var cairo, map, marker, styles;
     cairo = {
       lat: 55.7480534,
       lng: 37.5805732
@@ -198,10 +252,17 @@ $(document).ready(function() {
       center: cairo,
       zoom: 15
     });
+    marker = new google.maps.Marker({
+      position: {
+        lat: 55.7480534,
+        lng: 37.5805732
+      },
+      map: map
+    });
     styles = [
       {
         'featureType': 'water',
-        'elementType': 'geometry',
+        '  elementType': 'geometry',
         'stylers': [
           {
             'color': '#C2C2C2'
@@ -291,6 +352,16 @@ $(document).ready(function() {
       scrollwheel: false
     });
   };
+  $('.popup__close').click(function() {
+    return $('.popup').hide();
+  });
+  $('.popup-show').click(function() {
+    return $('.popup').show();
+  });
+  $('input[type="text"]').click(function() {
+    return $(this).val('');
+  });
+  return $('.phone').mask("+7(999)999 99 99");
 });
 });
 
