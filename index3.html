@@ -8,14 +8,15 @@
   </script>
   <script>
     require('initialize');
-    
+
   </script>
 </head>
 <body>
   <div class="popup">
     <div class="popup__close"><img src="images/close.png"></div>
+    <div class="hide"></div>
     <div class="inner">
-      <div class="catalog-form"> 
+      <div class="catalog-form">
         <div class="catalog-form__title">Заполните форму</div>
         <input id="popupFirst_name" type="text" value="Ваше имя" class="catalog-form__input">
         <input id="popupFirst_phone" type="text" placeholder="Ваш телефон" class="catalog-form__input phone">
@@ -24,9 +25,23 @@
       </div>
     </div>
   </div>
+
+  <div class="popup__demo">
+    <div class="popup__close"><img src="images/close.png"></div>
+    <div class="hide"></div>
+    <div class="inner">
+      <div class="catalog-form">
+        <div class="catalog-form__title">Заполните форму</div>
+        <input id="demoThird_name" type="text" value="Ваше имя" class="catalog-form__input">
+        <input id="demoThird_phone" type="text" placeholder="Ваш телефон" class="catalog-form__input phone">
+        <div class="catalog-form__button js-demo3">Записаться на демонстрацию</div>
+        <div class="catalog-form__privacy">Ваши контактные данные в безопасности<br>и не будут переданы третьим лицам</div>
+      </div>
+    </div>
+  </div>
   <div class="head">
     <div class="container">
-      <header class="head__header header"> 
+      <header class="head__header header">
         <div class="header__label">Элитные кухни<br>от производителя в Москве</div>
         <div class="header__logo"><img src="images/logo.png" alt="TESOR"></div>
         <div class="header__contacts contacts">
@@ -36,7 +51,7 @@
         </div>
       </header>
       <div class="head__title">ЭЛИТНЫЕ КУХНИ GIULIA NOVARS<br>ПО ИНДИВИДУАЛЬНЫМ ЗАМЕРАМ<br>В РАССРОЧКУ НА 90 ДНЕЙ</div>
-      <div class="head__icons head-icons"> 
+      <div class="head__icons head-icons">
         <div class="head-icons__item"><img src="images/five-years.png" alt="">
           <div class="head-icons__label">Гарантия 5 лет</div>
         </div>
@@ -45,7 +60,7 @@
         </div>
       </div>
       <div class="head__form form">
-        <div class="form__title"><span>Вызовите профессионального замерщика сейчас  </span><br>и он приедет сегодня  </div>
+        <div class="form__title"><span>Вызовите профессионального замерщика сейчас  <br>и он приедет сегодня  </span></div>
         <div class="form__inputs">
           <input id="thirdPage_name" type="text" value="Ваше имя" class="form__input">
           <input id="thirdPage_phone" type="text" placeholder="Ваш телефон" class="form__input phone">
@@ -57,15 +72,15 @@
     </div>
   </div>
   <div class="demonstration">
-    <div class="container"> 
+    <div class="container">
       <div class="demonstration__title">Приходите на демонстрацию в дизайн-салон кухню на Смоленской 10</div>
-      <div class="demonstration__button">Записаться на демонстрацию</div>
-      <div class="demonstration__link"><a href="http://superzoom.ru/pano/_tesori/">Посмотреть 3D-тур по салону</a></div>
+      <div class="demonstration__button ">Записаться на демонстрацию</div>
+      <div class="demonstration__link"><a href="http://superzoom.ru/pano/_tesori/" target="blank">Посмотреть 3D-тур по салону</a></div>
     </div>
   </div>
   <div id="map"></div>
-  <div class="footer"> 
-    <div class="container"> 
+  <div class="footer">
+    <div class="container">
       <div class="footer__copyright">Copyright ® 2014-2016 Дизайн-студия «Tesori Casa»: Москва, ул. Смоленская 10, +7(499)241-39-62</div>
     </div>
   </div>

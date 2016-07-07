@@ -162,7 +162,7 @@ $(document).ready(function() {
       text: "Имя: " + catalog_name + ", телефон: " + catalog_phone
     }, {
       success: function(success) {
-        return swal('Спасибо за заявку');
+        return swal('Спасибо за заявку','в ближайшее время наш менеджер свяжется с Вами');
       },
       error: function(error) {
         return swal('Ошибка');
@@ -177,16 +177,17 @@ $(document).ready(function() {
       target: 'valeraerohin97@mail.ru',
       originator: 'tesor@landing.ru',
       subject: 'Новая заявка!',
-      text: "Имя: " + firstPage_name + ", телефон: " + firstPage_phone
+      text: "Имя: " + catalog_name + ", телефон: " + catalog_phone
     }, {
       success: function(success) {
-        return swal('Спасибо за заявку!');
+        return swal('Спасибо за заявку','в ближайшее время наш менеджер свяжется с Вами');
       },
       error: function(error) {
         return swal('Ошибка');
       }
     });
   });
+
   $('.popupFirst').click(function() {
     var catalog_name, catalog_phone;
     catalog_name = $('#popupFirst_name').val();
@@ -198,13 +199,71 @@ $(document).ready(function() {
       text: "Имя: " + catalog_name + ", телефон: " + catalog_phone
     }, {
       success: function(success) {
-        return swal('Спасибо за заявку');
+        return swal('Спасибо за заявку','в ближайшее время наш менеджер свяжется с Вами');
       },
       error: function(error) {
         return swal('Ошибка');
       }
     });
   });
+
+  $('.js-demo').click(function() {
+    var catalog_name, catalog_phone;
+    catalog_name = $('#demoFirst_name').val();
+    catalog_phone = $('#demoFirst_phone').val();
+    return Parse.Cloud.run('sendmail', {
+      target: 'valeraerohin97@mail.ru',
+      originator: 'tesor@landing.ru',
+      subject: 'Новая заявка!',
+      text: "Имя: " + catalog_name + ", телефон: " + catalog_phone
+    }, {
+      success: function(success) {
+        return swal('Спасибо за заявку','в ближайшее время наш менеджер свяжется с Вами');
+      },
+      error: function(error) {
+        return swal('Ошибка');
+      }
+    });
+  });
+
+  $('.js-demo2').click(function() {
+    var catalog_name, catalog_phone;
+    catalog_name = $('#demoSec_name').val();
+    catalog_phone = $('#demoSec_phone').val();
+    return Parse.Cloud.run('sendmail', {
+      target: 'valeraerohin97@mail.ru',
+      originator: 'tesor@landing.ru',
+      subject: 'Новая заявка!',
+      text: "Имя: " + catalog_name + ", телефон: " + catalog_phone
+    }, {
+      success: function(success) {
+        return swal('Спасибо за заявку','в ближайшее время наш менеджер свяжется с Вами');
+      },
+      error: function(error) {
+        return swal('Ошибка');
+      }
+    });
+  });
+
+  $('.js-demo3').click(function() {
+    var catalog_name, catalog_phone;
+    catalog_name = $('#demoThird_name').val();
+    catalog_phone = $('#demoThird_phone').val();
+    return Parse.Cloud.run('sendmail', {
+      target: 'valeraerohin97@mail.ru',
+      originator: 'tesor@landing.ru',
+      subject: 'Новая заявка!',
+      text: "Имя: " + catalog_name + ", телефон: " + catalog_phone
+    }, {
+      success: function(success) {
+        return swal('Спасибо за заявку','в ближайшее время наш менеджер свяжется с Вами');
+      },
+      error: function(error) {
+        return swal('Ошибка');
+      }
+    });
+  });
+
   $('.popupSecond').click(function() {
     var catalog_name, catalog_phone;
     catalog_name = $('#popupSecond_name').val();
@@ -213,10 +272,10 @@ $(document).ready(function() {
       target: 'valeraerohin97@mail.ru',
       originator: 'tesor@landing.ru',
       subject: 'Новая заявка!',
-      text: "Имя: " + firstPage_name + ", телефон: " + firstPage_phone
+      text: "Имя: " + catalog_name + ", телефон: " + catalog_phone
     }, {
       success: function(success) {
-        return swal('Спасибо за заявку!');
+        return swal('Спасибо за заявку','в ближайшее время наш менеджер свяжется с Вами');
       },
       error: function(error) {
         return swal('Ошибка');
@@ -231,10 +290,10 @@ $(document).ready(function() {
       target: 'valeraerohin97@mail.ru',
       originator: 'tesor@landing.ru',
       subject: 'Новая заявка!',
-      text: "Имя: " + firstPage_name + ", телефон: " + firstPage_phone
+      text: "Имя: " + catalog_name + ", телефон: " + catalog_phone
     }, {
       success: function(success) {
-        return swal('Спасибо за заявку!');
+        return swal('Спасибо за заявку','в ближайшее время наш менеджер свяжется с Вами');
       },
       error: function(error) {
         return swal('Ошибка');
@@ -355,6 +414,22 @@ $(document).ready(function() {
   $('.popup__close').click(function() {
     return $('.popup').hide();
   });
+
+  $('.popup__close').click(function() {
+    return $('.popup__demo').hide();
+  });
+
+  $('.hide').click(function() {
+    return $('.popup').hide();
+  });
+
+  $('.demonstration__button').click(function() {
+    return $('.popup__demo').show();
+  });
+  $('.hide').click(function() {
+    return $('.popup__demo').hide();
+  });
+
   $('.popup-show').click(function() {
     return $('.popup').show();
   });
@@ -366,7 +441,7 @@ $(document).ready(function() {
 });
 
 ;require.register("___globals___", function(exports, require, module) {
-  
+
 });})();require('___globals___');
 
 
